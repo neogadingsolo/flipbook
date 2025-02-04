@@ -1,7 +1,7 @@
 var pdfFiles = [
-  'pdf/food_menu.pdf', // Ensure this file exists in the "pdf" folder
-  'pdf/menu2.pdf',
-  'pdf/menu3.pdf'
+  'pdf/food_menu.pdf',
+  'pdf/beverage_menu.pdf',
+  'pdf/kids_menu.pdf'
 ];
 
 var flipbookOptions = {
