@@ -1,7 +1,8 @@
 var pdfFiles = [
   'pdf/food_menu.pdf',
   'pdf/beverage_menu.pdf',
-  'pdf/kids_menu.pdf'
+  'pdf/kids_menu.pdf',
+  'pdf/menu.pdf'  
 ];
 
 var flipbookOptions = {
