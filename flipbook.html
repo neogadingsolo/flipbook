@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Flipbook Viewer</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
+  
   <!-- Styles -->
   <link href="lib/css/main.css" rel="stylesheet">
   <link href="lib/css/themify-icons.min.css" rel="stylesheet">
@@ -28,25 +28,12 @@
 
     jQuery(document).ready(function () {
       var pdf = getQueryParam('pdf');
-      
-      if (!pdf) {
+      if (pdf) {
+        var flipbookDiv = $('<div>', { id: 'flipbook' }).appendTo('#flipbookContainer');
+        flipbookDiv.flipBook(pdf, flipbookOptions);
+      } else {
         $('#flipbookContainer').html('<p class="text-red-500">No PDF specified.</p>');
-        return;
       }
-
-      // Ensure PDF exists before loading it
-      fetch(pdf, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            var flipbookDiv = $('<div>', { id: 'flipbook' }).appendTo('#flipbookContainer');
-            flipbookDiv.flipBook(pdf, flipbookOptions);
-          } else {
-            $('#flipbookContainer').html('<p class="text-red-500">File not found: ' + pdf + '</p>');
-          }
-        })
-        .catch(() => {
-          $('#flipbookContainer').html('<p class="text-red-500">Error loading file: ' + pdf + '</p>');
-        });
     });
   </script>
 </body>
